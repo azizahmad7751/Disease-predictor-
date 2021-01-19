@@ -1,0 +1,133 @@
+{% extends "head.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+    <!-- END header -->
+    {% block body %}
+
+
+    
+  <section class="home-slider inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url({% static 'img/slider-2.jpg'%});"> 
+        
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>THIS IS DISEASE PREDICTOR</h1>
+              <p>DISEASE PREDICTOR is a health care to improve human health by using genomics to advance our understanding of the biology and treatment of human disease, and to help lay the groundwork for a new generation of therapies</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- END slider -->
+
+
+    <section class="section bg-light custom-tabs">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-4 border-right element-animate" data-animate-effect="fadeInLeft">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><span>01</span> Amenities</a>
+              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><span>02</span> Medical Services</a>
+              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><span>03</span> Patient Services</a>
+              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><span>04</span> Expert Doctors</a>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-7 element-animate" data-animate-effect="fadeInLeft">
+            
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <span class="icon flaticon-hospital"></span>
+                <h2 class="text-primary">Amenities</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <span class="icon flaticon-first-aid-kit"></span>
+                <h2 class="text-primary">Medical Services</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <span class="icon flaticon-hospital-bed"></span>
+                <h2 class="text-primary">Patient Services</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <span class="icon flaticon-doctor"></span>
+                <h2 class="text-primary">Expert Doctors</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
+                <p>Inventore fugit error iure nisi reiciendis fugiat illo pariatur quam sequi quod iusto facilis officiis nobis sit quis molestias asperiores rem, blanditiis! Commodi exercitationem vitae deserunt qui nihil ea, tempore et quam natus quaerat doloremque.</p>
+                <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 element-animate">
+            <img src="{% static 'img/img_1.jpg'%}" class="img-fluid mb-4" alt="Image placeholder">
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5 element-animate">
+            <h2 class="text-uppercase mb-4">DISEASE PREDICTOR HISTORY</h2>
+            <p class="lead">DISEASE PREDICTOR  is an “experiment” in this new way of doing science. It spans some of Boston’s leading institutions and scientific disciplines (biology, chemistry, medicine, computer science, and engineering).</p>
+            <p class="mb-5">Today, the DISEASE PREDICTOR community includes more than three thousand scientists, committed to advancing research in areas including infectious disease, cancer, psychiatric research, and cardiovascular disease.</p>
+            <p><a href="#" class="btn btn-primary">Get In Touch</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">Our Doctors</h2>
+            <p class="mb-0 lead">Our Doctors members are deeply engaged in the intellectual life of Broad and are responsible for setting its scientific direction. Core Institute Members have their primary laboratories in the Broad Institute facilities.</p>
+          </div>
+        </div>
+         <div class="row element-animate">
+          <div class="major-caousel js-carousel-1 owl-carousel">
+            {% for ndoc in navdoc %}
+            <div>
+               
+              <div class="media d-block media-custom text-center">
+                <img src="{{ndoc.img.url}}" alt="Image Placeholder" class="img-fluid">
+                <div class="media-body">
+                  
+                  <h3 class="mt-0 text-black">{{ndoc.title}}</h3>
+                  <p>{{ndoc.desc}} </p>
+                  <p>
+                  
+                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                    <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                  </p>
+                </div>
+
+              </div>
+              
+            </div>
+            {% endfor %}
+            <div>
+              
+            
+      </div>
+    </section>
+    <!-- END section -->
+{% endblock %}

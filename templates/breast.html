@@ -1,0 +1,185 @@
+{% extends "head1.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+  
+    <!-- END header -->
+}
+{% block title %} Disease Predictor {% endblock %}
+
+{% block body %}
+    <!-- Bootstrap CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+<section class="section bg-secondary" >
+   
+
+    <div class="container" style="background-color:#5F9EA0">
+      <div class="mt-4"  >
+      <div class="display-3 my-2 text-center" style="background-color:#5F9EA0">Breast Cancer Prediction</div>
+      <hr />
+      {% if context %}
+       <div class="alert alert-danger">
+ 
+
+      <div class="display-4 my-2 text-center">
+        You {{ context }} breast cancer.
+      </div>
+     
+      <a class="btn btn-primary" href="{% url 'breast' %}" role="button">Go again for prediction</a>
+     </div>      
+
+
+
+
+ <form class="row" action="">
+   
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="radius">Mean Radius</label>
+              <input
+                
+                class="form-control"
+                
+                 placeholder="{{radius}}" disabled
+                 />
+            </div>
+            <div class="form-group">
+              <label for="texture">Mean Texture</label>
+              <input
+               
+                class="form-control"
+                placeholder="{{texture}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="perimeter">Mean Perimeter</label>
+              <input
+                
+                class="form-control"
+              
+                 placeholder="{{perimeter}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="area">Mean Area</label>
+              <input
+               
+                class="form-control"
+               
+                placeholder="{{area}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="smoothness">Mean Smoothness</label>
+              <input
+                class="form-control"
+                placeholder="{{smoothness}}" disabled
+              />
+            </div>
+           </div>
+          </div>
+         
+        </form>
+      </div>
+       <div>
+      <a href="{% url 'doctors' %}" class="cta-link element-animate">
+      <span class="sub-heading">Send Your Prediction To our Expert Doctor  </span>
+      <span class="heading">Make an Appointment</span>
+    </a> 
+    </div>
+</section>
+{% else %}
+      <!-- 
+      19:46:19 09 Oct, 2019 by Arjun Adhikari
+      Form Here 
+      -->
+<section class="section bg-light" >
+
+
+   
+<div class="container" style="background-color:#5F9EA0">
+
+
+    
+
+      <div class="mt-4" >
+       
+           <div><h1> <p class="text-white bg-dark"  > Breast Cancer Prediction: Do your prediction .</p></h1></div>
+        <form class="row" style="background-color:#b7cbd2" method="POST" action="{% url 'breast' %}">
+   
+          {% csrf_token %}
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="radius">Mean Radius</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="radius"
+                value="0"
+                name="radius"
+              />
+            </div>
+            <div class="form-group">
+              <label for="texture">Mean Texture</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="texture"
+                value="0"
+                name="texture"
+              />
+            </div>
+            <div class="form-group">
+              <label for="perimeter">Mean Perimeter</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="perimeter"
+                value="0"
+                name="perimeter"
+              />
+            </div>
+            <div class="form-group">
+              <label for="area">Mean Area</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="area"
+                value="0"
+                name="area"
+              />
+            </div>
+            <div class="form-group">
+              <label for="smoothness">Mean Smoothness</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="smoothness"
+                value="0"
+                name="smoothness"
+              />
+            </div>
+             <div class="mt-4">
+            <button type="submit" class="btn-lg btn-block btn btn-danger mb-5">
+              Predict
+            </button>
+          </div>
+        
+         
+        </form>
+         </div>
+       </div>
+       </div>
+    
+    </div>
+      
+{% endif %}
+ </section>  
+
+    <!-- Optional JavaScript -->
+   {% endblock %}

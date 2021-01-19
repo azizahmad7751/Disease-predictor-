@@ -1,0 +1,57 @@
+<!--
+{% extends "head1.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+{% block body %}
+
+
+<section class="section bg-light">
+  
+      <div class="container">
+        <div class="row">
+            {% for stat in status %}
+          <div class="col-md-3 element-animate">
+            <div class="media d-block media-custom text-center">
+              <img src="{{stat.img.url}}" alt="Image Placeholder" class="img-fluid">
+              <div class="media-body">
+                <h3 class="mt-0 text-black">{{stat.title}}</h3>
+                <p>{{stat.desc}}</p>
+                <p>
+                  <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                  <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                  <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+
+            <div class="col-md-5">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                {% for i in paginator.page_range %}
+               <li class="page-item {% if i == page_number %} active {% endif %}">
+                <a class="page-link" href="?page={{ i }}">{{i}}</a>
+               </li>
+               {% endfor %}
+              </ul>
+            </nav>
+          </div>
+
+ 
+      </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+       --->

@@ -1,0 +1,67 @@
+{% extends "head.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+
+    {% block body %}
+    <!-- END header -->
+   <section class="home-slider inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url({% static 'img/slider-2.jpg'%});">
+        
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>News &amp; Events</h1>
+              <p>Patients with ovarian cancer may develop a condition called ascites, an accumulation of abdominal fluid associated with treatment resistance.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- END slider -->
+
+  <section class="section bg-light">
+    
+      <div class="container">
+
+        <div class="row">
+          {% for new in news %}
+          <div class="col-md-4 element-animate">
+
+            <div class="media d-block media-custom text-left">
+              <img src="{{new.img.url}}" alt="Image Placeholder" class="img-fluid">
+              <div class="media-body">
+                <span class="meta-post">{{new.date_posted}}</span>
+                <h3 class="mt-0 text-black"><a href="#" class="text-black"> {{new.title}}</a></h3>
+                
+                <div class = "post_body">
+                            {{ new.desc|safe|truncatewords:"50"|linebreaks }}
+                      <a href="{% url 'test' %}">read more</a>
+                 </div>
+              </div>
+            </div>
+          </div>
+         
+          {% endfor %}     
+        
+          <div class="col-md-5">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                {% for i in paginator.page_range %}
+               <li class="page-item {% if i == page_number %} active {% endif %}">
+                <a class="page-link" href="?page={{ i }}">{{i}}</a>
+               </li>
+               {% endfor %}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+       
+    </section>
+
+  
+    <!-- END cta-link -->
+{% endblock %}

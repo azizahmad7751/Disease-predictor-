@@ -1,0 +1,211 @@
+{% load static %}
+{% static "img" as baseUrl %}
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <title>{% block title %} {% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  </head>
+  <body>
+    <header role="banner">
+      <div class="top-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-5">
+              <ul class="social list-unstyled">
+                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+              
+            
+
+              </ul>
+            </div>
+             <div class="col-md-6 col-sm-6 col-7 text-right">
+              
+              <a >
+            <form method="POST" action="accounts/logout">
+              {%csrf_token %}
+            <input type="submit" value="Logout">  
+            </form> 
+             </a>  
+           
+            </div>
+         
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'index' %}">Disease<span> Predictor</span>  </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link mr-3 " href="{% url 'heart' %}"
+            >Heart Disease Prediction
+          </a>
+
+          <a class="nav-item nav-link mr-3" href="{% url 'diabetes' %}"
+            >Diabetes Disease Prediction
+          </a>
+          <a class="nav-item nav-link " href="{% url 'breast' %}"
+            >Breast Cancer Prediction</a
+          >
+        
+          
+          
+
+        </div>
+      </div>
+        </div>
+      </nav>
+    </header>
+
+
+{% block body %}
+
+{% endblock %}
+
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row mb-5 element-animate">
+          <div class="col-md-3 mb-5">
+            <h3>Services</h3>
+            <ul class="footer-link list-unstyled">
+              <li><a href="#">Breast Cancer Diagnose</a></li>
+              <li><a href="#">Myocardial Infarction Diagnose</a></li>
+              <li><a href="#">Diabeties Diagnose</a></li>
+              <li><a href="#">Procedures &amp; Treatments</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Latest News</h3>
+            <ul class="footer-link list-unstyled">
+              <li><a href="#">News &amp; Press Releases</a></li>
+              <li><a href="#">Health Care Professional News</a></li>
+              <li><a href="#">Events &amp; Conferences</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>About</h3>
+            <ul class="footer-link list-unstyled">
+              <li><a href="#">About The Application</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Accreditations &amp; Awards</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Feedback</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <h3>Location &amp; Contact</h3>
+            <p class="mb-5">1930 Zarakhela Shamozai, Swat, </p>
+
+            <h4 class="text-uppercase mb-3 h6 text-white">Email</h5>
+            <p class="mb-5"><a href="mailto:caps7751@gmail.com.com">caps7751@gmail.com</a></p>
+            
+            <h4 class="text-uppercase mb-3 h6 text-white">Phone</h5>
+            <p>+923169517565</p>
+
+          </div>
+        </div>
+
+        <div class="row pt-md-3 element-animate">
+          <div class="col-md-12">
+            <hr class="border-t">
+          </div>
+          <div class="col-md-6 col-sm-12 copyright">
+            <p>&copy; 2020.Designed &amp; Developed by <a href="#">Aziz Ahmad &amp; Arshad Khan</a></p>
+          </div>
+          <div class="col-md-6 col-sm-12 text-md-right text-sm-left">
+            <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+            <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+            <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer --> <!-- Modal -->
+    <div class="modal fade" id="modalAppointment" tabindex="-1" role="dialog" aria-labelledby="modalAppointmentLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAppointmentLabel">Appointment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="#">
+              <div class="form-group">
+                <label for="appointment_name" class="text-black">Full Name</label>
+                <input type="text" class="form-control" id="appointment_name">
+              </div>
+              <div class="form-group">
+                <label for="appointment_email" class="text-black">Email</label>
+                <input type="text" class="form-control" id="appointment_email">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="appointment_date" class="text-black">Date</label>
+                    <input type="text" class="form-control" id="appointment_date">
+                  </div>    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="appointment_time" class="text-black">Time</label>
+                    <input type="text" class="form-control" id="appointment_time">
+                  </div>
+                </div>
+              </div>
+              
+
+              <div class="form-group">
+                <label for="appointment_message" class="text-black">Message</label>
+                <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary">
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js'%}"></script>
+    <script src="{% static 'js/jquery.timepicker.min.js'%}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+
+</body>
+</html>

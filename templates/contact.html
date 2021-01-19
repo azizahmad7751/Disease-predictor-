@@ -1,0 +1,87 @@
+{% extends "head.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+  
+    <!-- END header -->
+}
+{% block title %} Disease Predictor {% endblock %}
+
+{% block body %}
+    <!-- END header -->
+    
+    <section class="home-slider inner-page owl-carousel">
+      <div class="slider-item"   style="background-image: url('{% static 'img/slider-2.jpg'%}');">
+        
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>Contact Us </h1>
+              <p>Please email us your questions regarding our products. Welcome to Disease Predictor paitient Service</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- END slider -->
+    
+
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mb-5 element-animate">
+            {% if mess %}
+          <div class="alert alert-success" role="alert"> {{mess}}
+          </div>
+            {% endif %}
+            <form action="{% url 'contact'%}" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="fname">Your Name</label>
+                  <input type="text" name="fname" class="form-control form-control-lg" id="fname">
+                </div>
+               
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" class="form-control form-control-lg">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="message">Write Message</label>
+                  <textarea name="message" id="message" class="form-control form-control-lg" cols="30" rows="8"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="submit" value="Send Message" class="btn btn-primary btn-lg btn-block">
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5 element-animate">
+            
+            <h5 class="text-uppercase mb-3">Address</h5>
+            <p class="mb-5">98 east 21th Street, <br> Suite 721 <br>Khyber pukhtunkwah KP 10016</p>
+            
+            <h5 class="text-uppercase mb-3">Email Us At</h5>
+            <p class="mb-5"><a href="mailto:caps7751@gmail.com">caps7751@gmail.com</a> <br> <a href="mailto:customer@yourdomain.com">engr.arshadkhan@gmail.com</a></p>
+            
+            <h5 class="text-uppercase mb-3">Call Us</h5>
+            <p class="mb-5">Phone: (+1) 435 3533 <br> Mobile: (+92) 316 9517565 <br> Fax: (+1) 435 3534</p>
+  
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+  {% endblock %}

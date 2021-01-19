@@ -1,0 +1,49 @@
+{% extends "head1.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+  
+    <!-- END header -->
+
+{% block title %} Disease Predictor {% endblock %}
+
+{% block body %}
+
+    <!-- Bootstrap CSS -->
+    
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+
+
+  </head>
+  
+   
+      <div class="display-3 my-2 text-center"> Disease Prediction</div>
+      <hr />
+      {% if context %}
+       <div class="alert alert-danger">
+ 
+
+      <div class="display-4 my-2 text-center">
+        You {{ context }} Heart Disease.
+      </div>
+      </div>
+      {% endif %}
+
+
+    <!-- /.modal -->
+  <body class="bg-danger text-white">
+   
+<div class="container">
+
+
+      <!-- 
+      19:46:19 09 Oct, 2019 by Arjun Adhikari
+      Form Here 
+      -->
+      <div class="mt-4">
+        
+      </div>
+    </div>
+
+ 
+{% endblock %}

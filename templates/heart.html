@@ -1,0 +1,424 @@
+{% extends "head1.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+  
+    <!-- END header -->
+
+{% block title %} Disease Predictor {% endblock %}
+
+{% block body %}
+
+    <!-- Bootstrap CSS -->
+    
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+
+  
+  <section class="section bg-secondary" >
+
+
+   
+  <div class="container" style="background-color:#5F9EA0">
+
+
+    
+
+      <div class="mt-4"  >
+   
+      <div class="display-3 my-2 text-center" style="background-color:#5F9EA0">Heart Disease Prediction</div>
+      
+      {% if context %}
+       <div class="alert alert-danger">
+ 
+         
+      <div class="display-4 my-2 text-center">
+        You {{ context }} a risk of a Heart Disease.
+     </div>
+
+        
+         <a class="btn btn-primary" href="{% url 'heart' %}" role="button">Go again for prediction</a>
+      </div>
+      <form class="row" action="">
+        <div class="col-md-4">
+              <div class="form-group">
+              <label for="age">Age</label>
+              <input class="form-control" placeholder="{{age}}" disabled />
+               </div> 
+              <div class="form-group">
+              <label for="sex">Sex</label>
+              <input
+               
+                class="form-control"
+                id="sex"
+                name="sex"
+                placeholder="{{sex}}" disabled
+              />
+              </div>
+               <div class="form-group">
+              <label for="cp">CP</label>
+              <input
+              
+                class="form-control"
+                id="cp"
+                value="0"
+                name="cp"
+                placeholder="{{sex}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="trestbps">TRESTBPS</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="trestbps"
+                value="0"
+                name="trestbps"
+                placeholder="{{trestbps}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="chol">CHOL</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="chol"
+                value="0"
+                name="chol"
+                placeholder="{{chol}}" disabled
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="fbs">FBS</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="fbs"
+                value="0"
+                name="fbs"
+                placeholder="{{fbs}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="restecg">RESTECG</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="restecg"
+                value="0"
+                name="restecg"
+                placeholder="{{restecg}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="thalach">THALACH</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="thalach"
+                value="0"
+                name="thalach"
+                placeholder="{{thalach}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="exang">EXANG</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="exang"
+                value="0"
+                name="exang"
+                placeholder="{{exang}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="oldpeak">OLDPEAK</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="oldpeak"
+                value="0"
+                name="oldpeak"
+                placeholder="{{oldpeak}}" disabled
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="slope">SLOPE</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="slope"
+                value="0"
+                name="slope"
+                placeholder="{{slope}}" disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="ca">CA</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="ca"
+                value="0"
+                name="ca"
+                placeholder="{{ca}}" disabled
+              />
+            </div>
+            <div class="form-group mb-5">
+              <label for="thal">THAL</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="thal"
+                value="0"
+                name="thal"
+                placeholder="{{thal}}" disabled
+              />
+            </div>
+               
+
+            </div>
+      </form>
+
+      </div>
+      <div>
+      <a href="{% url 'doctors' %}" class="cta-link element-animate">
+      <span class="sub-heading">Send Your Prediction To our Expert Doctor  </span>
+      <span class="heading">Make an Appointment</span>
+    </a> 
+    </div>
+
+   </div>
+   </div>
+   </section> 
+      {% else %}
+   
+    <!-- /.modal -->
+  
+
+<section class="section bg-light" >
+
+
+   
+<div class="container"  >
+
+
+    
+
+      <div class="mt-4" >
+        <div class="d-flex justify-content-center" style="background-color:#808080">
+          <div class="shadow p-4 mb-4 bg-red">
+           <div><h1> <p class="text-white bg-dark"  > Heart Prediction: Do your prediction .</p></h1></div>
+        <form class="row" style="background-color:#5F9EA0" method="POST" action="{% url 'heart' %}">
+
+          {% csrf_token %}
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="age"
+                value="0"
+                name="age"
+              />
+            </div>
+            <div class="form-group">
+              <label for="sex">Sex</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="sex"
+                value="0"
+                name="sex"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cp">CP</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="cp"
+                value="0"
+                name="cp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="trestbps">TRESTBPS</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="trestbps"
+                value="0"
+                name="trestbps"
+              />
+            </div>
+            <div class="form-group">
+              <label for="chol">CHOL</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="chol"
+                value="0"
+                name="chol"
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="fbs">FBS</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="fbs"
+                value="0"
+                name="fbs"
+              />
+            </div>
+            <div class="form-group">
+              <label for="restecg">RESTECG</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="restecg"
+                value="0"
+                name="restecg"
+              />
+            </div>
+            <div class="form-group">
+              <label for="thalach">THALACH</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="thalach"
+                value="0"
+                name="thalach"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exang">EXANG</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="exang"
+                value="0"
+                name="exang"
+              />
+            </div>
+            <div class="form-group">
+              <label for="oldpeak">OLDPEAK</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="oldpeak"
+                value="0"
+                name="oldpeak"
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="slope">SLOPE</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="slope"
+                value="0"
+                name="slope"
+              />
+            </div>
+            <div class="form-group">
+              <label for="ca">CA</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="ca"
+                value="0"
+                name="ca"
+              />
+            </div>
+            <div class="form-group mb-5">
+              <label for="thal">THAL</label>
+              <input
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="thal"
+                value="0"
+                name="thal"
+              />
+            </div>
+            <div>
+
+               <div class="mt-4">
+            <button type="submit" id="row"  class="btn-lg btn-block btn btn-primary mb-5">
+              Predict
+            </button>
+            </div> 
+            </div>  
+          </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    {% endif %}
+   </section>
+
+       
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+$(function(){
+  $(".open-AddBookDialog").click(function(){
+     $('#bookId').val($(this).data('id'));
+    $("#addBookDialog").modal("show");
+  });
+});
+</script>
+
+{% endblock %}

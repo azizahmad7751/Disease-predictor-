@@ -1,0 +1,107 @@
+{% extends "head.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+
+
+
+	<title>Login </title>
+
+{% block body %}	
+	
+<!--===============================================================================================-->
+
+	<div class="limiter">
+		<div class="container-login100 style="background-image: url('images/img_thumb_3.jpg');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<div class="login100">
+					
+					
+				</div>
+
+				<form class="login100-form validate-form" action="login" onsubmit="return Validation()" method="post">
+			     {% csrf_token %}
+					<span class="login100-form-title">
+						User Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid Email is required:">
+						<input class="input100" type="text" name="username" placeholder="email" required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" placeholder="Password" required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="{% url 'password_reset' %}">
+							Password?
+						</a>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="{% url 'register' %}">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+				 <div>
+ 	{% for message in messages %}
+ 	<h3>{{message}}</h3>
+ 	{% endfor %}
+     </div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<script type="text/javascript">   
+
+function Validation()                                    
+{ 
+    var name = document.registration.username;               
+      
+  
+    var password = document.registration.password;  
+  
+    if (name.value == "")                                  
+    { 
+        window.alert("Please enter your Username or Email."); 
+        name.focus(); 
+        return false; 
+    } 
+   
+       
+
+    if (password.value == "")                        
+    { 
+
+        alert("Please enter your password"); 
+        password.focus();
+        return false; 
+    } 
+   
+
+    return true; 
+}
+</script> 
+{% endblock %}
